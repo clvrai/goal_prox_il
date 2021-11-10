@@ -1,0 +1,1 @@
+python tests/test_cmds/ddpg/def.py --prefix 'ddpg-test' --num-env-steps 3e6 --env-name "Pendulum-v0" --eval-interval -1 --log-smooth-len 10 --save-interval -1 --lr 0.0005 --critic-lr 0.001 --tau 0.005 --warmup-steps 2000 --update-every 10 --trans-buffer-size 50000 --batch-size 32 --linear-lr-decay False --max-grad-norm -1 --noise-std 0.1 --noise-type uh

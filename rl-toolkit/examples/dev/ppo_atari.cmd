@@ -1,0 +1,1 @@
+python examples/run_ppo.py --lr 2.5e-4 --num-mini-batch 4 --log-interval 1 --linear-lr-decay True --entropy-coef 0.01 --eval-interval -1 --save-interval -1 --prefix 'ppo'  --num-processes 8 --num-env-steps 1e7

@@ -1,0 +1,1 @@
+python tests/run_alg.py --prefix ddpg  --use-proper-time-limits --eval-interval -1 --save-interval -1 --alg ddpg --env-log-dir ~/tmp --trans-buffer-size 1000000 --batch-size 128 --lr 1e-4 --critic-lr 1e-3 --num-env-steps 3000000 --noise-std 0.1 --warmup-steps 0

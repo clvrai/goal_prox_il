@@ -1,0 +1,1 @@
+python tests/dev/classic_algs/def.py --prefix 'classic-test' --env-name Blackjack-v0 --log-smooth-len 10  --num-env-steps 1e4 --log-interval 100 --eval-interval -1 --eps-start 0.1 --gamma 1.0 --alg-type 'mc'

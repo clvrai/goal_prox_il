@@ -1,0 +1,1 @@
+python examples/run.py --eval-interval -1 --save-interval -1 --num-env-steps 50000 --prefix 'sarsa' --alg 'sarsa' --linear-lr-decay False --mlp-num-layers 2 --policy-hidden-size 16 --reward-smooth-len 5

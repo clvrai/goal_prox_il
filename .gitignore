@@ -1,0 +1,15 @@
+data
+wandb
+MUJOCO_LOG.TXT
+__pycache__
+tags
+_vizdoom.ini
+expert_datasets
+.hydra
+exp
+tb
+train.csv
+train.log
+eval.csv
+video
+.python-version

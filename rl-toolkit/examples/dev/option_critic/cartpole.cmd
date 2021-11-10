@@ -1,0 +1,1 @@
+python tests/dev/option_critic/def.py --prefix 'option-critic-test' --env-name CartPole-v0 --eval-interval -1 --log-smooth-len 10 --save-interval -1 --linear-lr-decay False --max-grad-norm -1 --batch-size 64 --lr 0.005 --normalize-env False 

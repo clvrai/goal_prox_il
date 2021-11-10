@@ -1,0 +1,1 @@
+python tests/dev/ddpg/def.py --prefix 'ddpg-test' --use-proper-time-limits --num-env-steps 3e6 --env-name "HalfCheetah-v2" --eval-interval -1 --log-smooth-len 10 --save-interval -1 --lr 1e-3 --critic-lr 1e-3 --tau 0.005 --n-rnd-steps 10000 --noise-std 0.1 --warmup-steps 1000 --update-every 50 --trans-buffer-size 1000000 --batch-size 100 --linear-lr-decay False --max-grad-norm -1

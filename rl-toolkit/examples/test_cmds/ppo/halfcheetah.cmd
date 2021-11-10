@@ -1,0 +1,1 @@
+python tests/test_cmds/ppo/main.py --prefix 'ppo-test' --use-proper-time-limits --linear-lr-decay True --lr 3e-4 --entropy-coef 0 --num-env-steps 10000000 --num-mini-batch 32 --num-epochs 10 --num-steps 64 --env-name "HalfCheetah-v3" --env-log-dir ~/tmp --eval-interval -1 --log-smooth-len 10

@@ -1,0 +1,10 @@
+{
+  "cmds_loc": "goal_prox/cmds/",
+  "proj_name": "p-goal-prox",
+  "wb_api_key": "c37d260e301b2422f2ded13d277f78e0028bd53d",
+  "conda_env": "rlf",
+  "wb_entity": "clvr",
+  "sync_host": "lim-b.usc.edu",
+  "sync_user": "aszot",
+  "sync_port": 22,
+}

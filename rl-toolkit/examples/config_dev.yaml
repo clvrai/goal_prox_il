@@ -1,0 +1,6 @@
+{
+  "conda_env": "rlf",
+  "cmds_loc": "examples/dev/",
+  "proj_name": "andrew-random",
+  "base_data_dir": "/srv/share/aszot3/p-viz-plan",
+}

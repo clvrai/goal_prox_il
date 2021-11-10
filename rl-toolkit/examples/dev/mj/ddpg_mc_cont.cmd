@@ -1,0 +1,1 @@
+python examples/run.py --prefix ddpg  --eval-interval -1 --save-interval -1  --num-env-steps 3000000 --alg ddpg --env-name MountainCarContinuous-v0 --env-log-dir ~/tmp --trans-buffer-size 10000 --batch-size 64 --lr 1e-4 --critic-lr 1e-3 --num-env-steps 1e5
