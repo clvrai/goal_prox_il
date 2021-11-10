@@ -1,7 +1,7 @@
 # Generalizable Imitation Learning from Observation via Inferring Goal Proximity
 #### [[Paper]](https://openreview.net/pdf?id=lp9foO8AFoD)
-[Youngwoon Lee^*](https://youngwoon.github.io/)<sup>1</sup>, 
-[Andrew Szot^*](https://www.andrewszot.com)<sup>2</sup>, 
+[Youngwoon Lee*](https://youngwoon.github.io/)<sup>1</sup>, 
+[Andrew Szot*](https://www.andrewszot.com)<sup>2</sup>, 
 [Shao-Hua Sun](https://www.andrewszot.com)<sup>1</sup>, 
 [Joseph Lim](https://www.clvrai.com/)<sup>1</sup>
 
