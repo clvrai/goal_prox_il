@@ -8,11 +8,10 @@
 <sup>1</sup>CLVR Lab, University of Southern California 
 <sup>2</sup>Georgia Institute of Technology
 
-<a href="https://clvrai.github.io/spirl/">
 <p align="center">
-<img src="docs/resources/spirl_teaser.png" width="800">
+<img src="method.png" width="800">
+</img>
 </p>
-</img></a>
 
 This is the official PyTorch implementation of the paper "**Accelerating Reinforcement Learning with Learned Skill Priors**"
 (CoRL 2020).
