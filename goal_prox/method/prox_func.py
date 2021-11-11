@@ -513,7 +513,7 @@ class ProxFunc(BaseIRLAlgo, ABC):
         parser.add_argument('--pf-with-agent', type=str2bool, default=True)
         parser.add_argument('--pf-with-success', type=str2bool, default=False)
         parser.add_argument('--pf-uncert', type=str2bool, default=True)
-        parser.add_argument('--pf-uncert-scale', type=float, default=0.1)
+        parser.add_argument('--pf-uncert-scale', type=float, default=0.01)
 
         parser.add_argument('--pf-gw-gt', type=str2bool, default=False)
         parser.add_argument('--pf-viz-type', type=str, default=None)
@@ -529,7 +529,7 @@ class ProxFunc(BaseIRLAlgo, ABC):
 
         parser.add_argument('--action-input', type=str2bool, default=False)
         parser.add_argument('--pf-state-norm', type=str2bool, default=False)
-        parser.add_argument('--pf-reward-norm', type=str2bool, default=False)
+        parser.add_argument('--pf-reward-norm', type=str2bool, default=True)
         parser.add_argument('--pf-clip', type=str2bool, default=True)
         parser.add_argument('--disc-grad-pen', type=float, default=0.0)
 

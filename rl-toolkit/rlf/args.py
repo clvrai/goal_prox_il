@@ -81,7 +81,7 @@ def add_args(parser):
     parser.add_argument(
         "--num-env-steps",
         type=float,
-        default=1e7,
+        default=5e6,
         help="number of environment steps to train (default: 1e8)",
     )
 

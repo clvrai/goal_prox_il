@@ -106,7 +106,7 @@ class BaseNetAlgo(BaseAlgo):
             help="-1 results in no grad norm",
         )
         parser.add_argument(
-            f"--{self.arg_prefix}linear-lr-decay", type=str2bool, default=False
+            f"--{self.arg_prefix}linear-lr-decay", type=str2bool, default=True
         )
         parser.add_argument(
             f"--{self.arg_prefix}lr-env-steps",
