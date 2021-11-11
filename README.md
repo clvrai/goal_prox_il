@@ -13,8 +13,8 @@
 </img>
 </p>
 
-This is the official PyTorch implementation of the paper "**Accelerating Reinforcement Learning with Learned Skill Priors**"
-(CoRL 2020).
+This is the official PyTorch implementation of the paper "**Generalizable Imitation Learning from Observation via Inferring Goal Proximity**"
+(NeurIPS 2021).
 
 
 ## Installation
