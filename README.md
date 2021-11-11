@@ -32,11 +32,11 @@ pip install -e .
 cd ../rl-toolkit
 pip install -e .
 
-wandb login <YOUR_API_KEY>
 mkdir -p data/trained_models
 ```
+2. Setup [Weights and Biases](https://wandb.ai/site) by first logging in with `wandb login <YOUR_API_KEY>` and then editing `config.yaml` with your W&B username and project name.
 
-2. Download expert demonstration datasets to `./expert_datasets`. We include the expert demonstration datasets on [Google Drive](https://drive.google.com/drive/folders/1Z9N7fTYb3uul-lgTC_zlJrMaDAkYYJdR?usp=sharing) and provide a script for downloading them.
+3. Download expert demonstration datasets to `./expert_datasets`. We include the expert demonstration datasets on [Google Drive](https://drive.google.com/drive/folders/1Z9N7fTYb3uul-lgTC_zlJrMaDAkYYJdR?usp=sharing) and provide a script for downloading them.
 ```
 python download_demos.py
 ```

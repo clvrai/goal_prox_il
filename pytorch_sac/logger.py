@@ -7,6 +7,7 @@ import shutil
 import torch
 import numpy as np
 from termcolor import colored
+from rlf.exp_mgr import config_mgr
 try:
     import wandb
 except:
@@ -226,7 +227,10 @@ class WbLogger(Logger):
                  log_frequency=10000,
                  agent='sac'):
         super().__init__(log_dir, save_tb, log_frequency, agent)
-        wandb.init(project='p-goal-prox', entity='clvr')
+        config_mgr.init("./config.yaml")
+        wb_proj_name = config_mgr.get_prop("proj_name")
+        wb_entity = config_mgr.get_prop("wb_entity")
+        wandb.init(project=wb_proj_name, entity=wb_entity)
 
 
     def _try_sw_log(self, key, value, step):
