@@ -2,7 +2,7 @@
 #### [[Paper]](https://openreview.net/pdf?id=lp9foO8AFoD)
 [Youngwoon Lee*](https://youngwoon.github.io/)<sup>1</sup>, 
 [Andrew Szot*](https://www.andrewszot.com)<sup>2</sup>, 
-[Shao-Hua Sun](https://www.andrewszot.com)<sup>1</sup>, 
+[Shao-Hua Sun](https://shaohua0116.github.io)<sup>1</sup>, 
 [Joseph Lim](https://www.clvrai.com/)<sup>1</sup>
 
 <sup>1</sup>CLVR Lab, University of Southern California 
