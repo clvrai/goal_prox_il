@@ -33,6 +33,7 @@ cd ../rl-toolkit
 pip install -e .
 
 wandb login <YOUR_API_KEY>
+mkdir -p data/trained_models
 ```
 
 2. Download expert demonstration datasets to `./expert_datasets`. We include the expert demonstration datasets on [Google Drive](https://drive.google.com/drive/folders/1Z9N7fTYb3uul-lgTC_zlJrMaDAkYYJdR?usp=sharing) and provide a script for downloading them.
@@ -48,7 +49,7 @@ For all of the experiments, you can specify the random seed with `--seed`.
 
 ### Navigation
 
-- Ours: `python goal_prox/main.py --prefix dpf --env-name "MiniGrid-FourRooms-v0" --alg dpf --traj-batch-size 32 --traj-load-path ./expert_datasets/nav_100.pt --traj-frac 0.25 `
+- Ours: `python goal_prox/main.py --prefix dpf --env-name "MiniGrid-FourRooms-v0" --alg dpf --traj-batch-size 32 --traj-load-path ./expert_datasets/nav_100.pt --traj-frac 0.25`
 - GAIfO-s: `python goal_prox/main.py --prefix gail --env-name "MiniGrid-FourRooms-v0" --alg gail --disc-lr 0.0001 --action-input False --traj-load-path ./expert_datasets/nav_100.pt --traj-frac 0.25`
 - GAIfO: `python goal_prox/main.py --prefix gaifo --env-name "MiniGrid-FourRooms-v0" --alg gaifo --disc-lr 0.001 --traj-load-path ./expert_datasets/nav_100.pt --traj-frac 0.25`
 - BCO: `python goal_prox/main.py --prefix bco --env-name "MiniGrid-FourRooms-v0" --alg bco  --max-grad-norm -1 --bco-expl-steps 10000 --bco-inv-lr 0.0001 --bco-inv-epochs 1 --bco-inv-eval-holdout 0.1 --bco-inv-batch-size 32 --bc-num-epochs 1 --bco-alpha 500 --bco-alpha-size 10000 --traj-batch-size 32 --num-processes 32 --eval-num-processes 32 --traj-load-path ./expert_datasets/nav_100.pt --traj-frac 0.25`
@@ -100,14 +101,14 @@ For running added noise experiments specify the following additional arguments:
 
 ### Fetch Push
 
-- Ours: `python goal_prox/main.py --use-proper-time-limits --num-mini-batch 32 --num-epochs 10 --alg dpf-deep --prefix dpf-deep --env-name FetchPushEnvCustom-v0 --exp-sample-size 4096 --exp-buff-size 4096 --pf-uncert-scale 0.001 --entropy-coef 0.001 --cuda False --traj-load-path ./expert_datasets/push_partial2.pt --fetch-easy-obs`
-- GAIfO-s: `python goal_prox/main.py --use-proper-time-limits --alg gail-deep --prefix gail-deep --env-name FetchPushEnvCustom-v0 --num-mini-batch 32 --num-epochs 10 --disc-lr 0.0001 --entropy-coef 0.001 --action-input False --gail-reward-norm True --cuda False --traj-load-path ./expert_datasets/push_partial2.pt --fetch-easy-obs`
-- GAIfO: `python goal_prox/main.py --use-proper-time-limits --prefix gaifo-deep --alg gaifo-deep --env-name FetchPushEnvCustom-v0 --num-mini-batch 32 --num-epochs 10 --disc-lr 0.0001 --entropy-coef 0.001 --action-input False --gail-reward-norm True --cuda False --traj-load-path ./expert_datasets/push_partial2.pt --fetch-easy-obs`
-- BCO: `python goal_prox/main.py --use-proper-time-limits --prefix bco --alg bco --env-name FetchPushEnvCustom-v0 --log-interval 1 --eval-num-processes 32 --num-processes 32 --bc-state-norm True --max-grad-norm -1 --normalize-env False --bc-num-epochs 1 --bco-expl-steps 10000 --bco-inv-lr 0.0001 --bco-inv-epochs 1 --bco-alpha 500 --bco-alpha-size 10000 --traj-load-path ./expert_datasets/push_partial2.pt --fetch-easy-obs`
-- BC: `python goal_prox/main.py --use-proper-time-limits --prefix bc --alg bc --env-name FetchPushEnvCustom-v0 --eval-num-processes 20 --traj-val-ratio 0.2 --traj-load-path ./expert_datasets/push_partial2.pt --fetch-easy-obs --normalize-env False --bc-num-epochs 1000`
-- GAIL: `python goal_prox/main.py --use-proper-time-limits --alg gail-deep --prefix gail-deep --env-name FetchPushEnvCustom-v0 --num-mini-batch 32 --num-epochs 10 --disc-lr 0.0001 --entropy-coef 0.001 --action-input True --gail-reward-norm True --cuda False --traj-load-path ./expert_datasets/push_partial2.pt --fetch-easy-obs`
+- Ours: `python goal_prox/main.py --use-proper-time-limits --num-mini-batch 32 --num-epochs 10 --alg dpf-deep --prefix dpf-deep --env-name FetchPushEnvCustom-v0 --exp-sample-size 4096 --exp-buff-size 4096 --pf-uncert-scale 0.001 --entropy-coef 0.001 --cuda False --traj-load-path ./expert_datasets/push_partial2.pt`
+- GAIfO-s: `python goal_prox/main.py --use-proper-time-limits --alg gail-deep --prefix gail-deep --env-name FetchPushEnvCustom-v0 --num-mini-batch 32 --num-epochs 10 --disc-lr 0.0001 --entropy-coef 0.001 --action-input False --gail-reward-norm True --cuda False --traj-load-path ./expert_datasets/push_partial2.pt`
+- GAIfO: `python goal_prox/main.py --use-proper-time-limits --prefix gaifo-deep --alg gaifo-deep --env-name FetchPushEnvCustom-v0 --num-mini-batch 32 --num-epochs 10 --disc-lr 0.0001 --entropy-coef 0.001 --action-input False --gail-reward-norm True --cuda False --traj-load-path ./expert_datasets/push_partial2.pt`
+- BCO: `python goal_prox/main.py --use-proper-time-limits --prefix bco --alg bco --env-name FetchPushEnvCustom-v0 --log-interval 1 --eval-num-processes 32 --num-processes 32 --bc-state-norm True --max-grad-norm -1 --normalize-env False --bc-num-epochs 1 --bco-expl-steps 10000 --bco-inv-lr 0.0001 --bco-inv-epochs 1 --bco-alpha 500 --bco-alpha-size 10000 --traj-load-path ./expert_datasets/push_partial2.pt`
+- BC: `python goal_prox/main.py --use-proper-time-limits --prefix bc --alg bc --env-name FetchPushEnvCustom-v0 --eval-num-processes 20 --traj-val-ratio 0.2 --traj-load-path ./expert_datasets/push_partial2.pt --normalize-env False --bc-num-epochs 1000`
+- GAIL: `python goal_prox/main.py --use-proper-time-limits --alg gail-deep --prefix gail-deep --env-name FetchPushEnvCustom-v0 --num-mini-batch 32 --num-epochs 10 --disc-lr 0.0001 --entropy-coef 0.001 --action-input True --gail-reward-norm True --cuda False --traj-load-path ./expert_datasets/push_partial2.pt`
 - SQIL: `python pytorch_sac/train.py env=FetchPushEnvCustom-v0 expertpath=./expert_datasets/push_partial2.pt expertfrac=1.0 env_noise=1.00`
-- GoalGAIL: `python goal_prox/main.py --prefix goal-gail --alg goal-gail --use-proper-time-limits --linear-lr-decay False --trans-buffer-size 1000000 --update-every 100 --updates-per-batch 50 --rnd-prob 0.3 --disc-lr 0.0001 --gail-state-norm False --cuda False --reward-type gail --env-name FetchPushEnvCustom-v0 --fetch-easy-obs --traj-load-path ./expert_datasets/push_partial2.pt --normalize-env False`
+- GoalGAIL: `python goal_prox/main.py --prefix goal-gail --alg goal-gail --use-proper-time-limits --linear-lr-decay False --trans-buffer-size 1000000 --update-every 100 --updates-per-batch 50 --rnd-prob 0.3 --disc-lr 0.0001 --gail-state-norm False --cuda False --reward-type gail --env-name FetchPushEnvCustom-v0 --traj-load-path ./expert_datasets/push_partial2.pt --normalize-env False`
 
 For running added noise experiments specify the following additional arguments:
 - 1.0x: `--noise-ratio 1.0 --goal-noise-ratio 1.0` or `env_noise=1.0` for SQIL
@@ -118,14 +119,14 @@ For running added noise experiments specify the following additional arguments:
 
 ### Fetch Pick
 
-- Ours: `python goal_prox/main.py --use-proper-time-limits --num-mini-batch 32 --num-epochs 10 --alg dpf-deep --prefix dpf-deep --env-name FetchPickAndPlaceDiffHoldout-v0 --exp-sample-size 4096 --exp-buff-size 4096 --pf-uncert-scale 0.001 --entropy-coef 0.001 --cuda False --traj-load-path ./expert_datasets/pick_partial3.pt --fetch-easy-obs`
-- GAIfO-s: `python goal_prox/main.py --use-proper-time-limits --alg gail-deep --prefix gail-deep --env-name FetchPickAndPlaceDiffHoldout-v0 --num-mini-batch 32 --num-epochs 10 --disc-lr 0.0001 --entropy-coef 0.001 --action-input False --gail-reward-norm True --cuda False --traj-load-path ./expert_datasets/pick_partial3.pt --fetch-easy-obs`
-- GAIfO: `python goal_prox/main.py --use-proper-time-limits --prefix gaifo-deep --alg gaifo-deep --env-name FetchPickAndPlaceDiffHoldout-v0 --num-mini-batch 32 --num-epochs 10 --disc-lr 0.0001 --entropy-coef 0.001 --action-input False --gail-reward-norm True --cuda False --traj-load-path ./expert_datasets/pick_partial3.pt --fetch-easy-obs`
-- BCO: `python goal_prox/main.py --use-proper-time-limits --prefix bco --alg bco --env-name FetchPickAndPlaceDiffHoldout-v0 --log-interval 1 --eval-num-processes 32 --num-processes 32 --bc-state-norm True --max-grad-norm -1 --normalize-env False --bc-num-epochs 1 --bco-expl-steps 10000 --bco-inv-lr 0.0001 --bco-inv-epochs 1 --bco-alpha 500 --bco-alpha-size 10000 --traj-load-path ./expert_datasets/pick_partial3.pt --fetch-easy-obs`
-- BC: `python goal_prox/main.py --use-proper-time-limits --prefix bc --alg bc --env-name FetchPickAndPlaceDiffHoldout-v0 --eval-num-processes 20 --traj-val-ratio 0.2 --traj-load-path ./expert_datasets/pick_partial3.pt --fetch-easy-obs --normalize-env False --bc-num-epochs 1000`
-- GAIL: `python goal_prox/main.py --use-proper-time-limits --alg gail-deep --prefix gail-deep --env-name FetchPickAndPlaceDiffHoldout-v0 --num-mini-batch 32 --num-epochs 10 --disc-lr 0.0001 --entropy-coef 0.001 --action-input True --gail-reward-norm True --cuda False --traj-load-path ./expert_datasets/pick_partial3.pt --fetch-easy-obs`
+- Ours: `python goal_prox/main.py --use-proper-time-limits --num-mini-batch 32 --num-epochs 10 --alg dpf-deep --prefix dpf-deep --env-name FetchPickAndPlaceDiffHoldout-v0 --exp-sample-size 4096 --exp-buff-size 4096 --pf-uncert-scale 0.001 --entropy-coef 0.001 --cuda False --traj-load-path ./expert_datasets/pick_partial3.pt`
+- GAIfO-s: `python goal_prox/main.py --use-proper-time-limits --alg gail-deep --prefix gail-deep --env-name FetchPickAndPlaceDiffHoldout-v0 --num-mini-batch 32 --num-epochs 10 --disc-lr 0.0001 --entropy-coef 0.001 --action-input False --gail-reward-norm True --cuda False --traj-load-path ./expert_datasets/pick_partial3.pt`
+- GAIfO: `python goal_prox/main.py --use-proper-time-limits --prefix gaifo-deep --alg gaifo-deep --env-name FetchPickAndPlaceDiffHoldout-v0 --num-mini-batch 32 --num-epochs 10 --disc-lr 0.0001 --entropy-coef 0.001 --action-input False --gail-reward-norm True --cuda False --traj-load-path ./expert_datasets/pick_partial3.pt`
+- BCO: `python goal_prox/main.py --use-proper-time-limits --prefix bco --alg bco --env-name FetchPickAndPlaceDiffHoldout-v0 --log-interval 1 --eval-num-processes 32 --num-processes 32 --bc-state-norm True --max-grad-norm -1 --normalize-env False --bc-num-epochs 1 --bco-expl-steps 10000 --bco-inv-lr 0.0001 --bco-inv-epochs 1 --bco-alpha 500 --bco-alpha-size 10000 --traj-load-path ./expert_datasets/pick_partial3.pt`
+- BC: `python goal_prox/main.py --use-proper-time-limits --prefix bc --alg bc --env-name FetchPickAndPlaceDiffHoldout-v0 --eval-num-processes 20 --traj-val-ratio 0.2 --traj-load-path ./expert_datasets/pick_partial3.pt --normalize-env False --bc-num-epochs 1000`
+- GAIL: `python goal_prox/main.py --use-proper-time-limits --alg gail-deep --prefix gail-deep --env-name FetchPickAndPlaceDiffHoldout-v0 --num-mini-batch 32 --num-epochs 10 --disc-lr 0.0001 --entropy-coef 0.001 --action-input True --gail-reward-norm True --cuda False --traj-load-path ./expert_datasets/pick_partial3.pt`
 - SQIL `python pytorch_sac/train.py env=FetchPickAndPlaceDiffHoldout-v0 expertpath=./expert_datasets/pick_partial3.pt expertfrac=1.0 env_noise=1.00`
-- GoalGAIL: `python goal_prox/main.py --use-proper-time-limits --linear-lr-decay False --prefix goal-gail --alg goal-gail --env-name FetchPickAndPlaceDiffHoldout-v0 --trans-buffer-size 1000000 --update-every 100 --updates-per-batch 50 --rnd-prob 0.3 --disc-lr 0.0001 --gail-state-norm False --cuda False --reward-type gail --fetch-easy-obs --traj-load-path ./expert_datasets/pick_partial3.pt --normalize-env False`
+- GoalGAIL: `python goal_prox/main.py --use-proper-time-limits --linear-lr-decay False --prefix goal-gail --alg goal-gail --env-name FetchPickAndPlaceDiffHoldout-v0 --trans-buffer-size 1000000 --update-every 100 --updates-per-batch 50 --rnd-prob 0.3 --disc-lr 0.0001 --gail-state-norm False --cuda False --reward-type gail --traj-load-path ./expert_datasets/pick_partial3.pt --normalize-env False`
 
 For running added noise experiments specify the following additional arguments:
 - 1.0x: `--noise-ratio 1.0 --goal-noise-ratio 1.0` or `env_noise=1.0` for SQIL

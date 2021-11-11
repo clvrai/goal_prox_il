@@ -270,7 +270,7 @@ class ProxFunc(BaseIRLAlgo, ABC):
             ])
         return frame
 
-    def first_train(self, log, eval_policy):
+    def first_train(self, log, eval_policy, env_interface):
         if self.args.pf_load_path is not None:
             self.prox_func.load_state_dict(torch.load(self.args.pf_load_path)['prox_func'])
             print('Loaded proximity function from %s' % self.args.pf_load_path)
@@ -304,12 +304,6 @@ class ProxFunc(BaseIRLAlgo, ABC):
             plot_title = 'Val Loss %.5f' % avg_val_loss
 
         # Save a figure of the loss curve
-        rutils.plot_line(losses, 'prox_loss.png',
-                         self.args, not self.args.no_wb, title=plot_title)
-
-        # Save the proximity model
-        model_save_path = osp.join(self.model_save_dir, 'prox_func.pt')
-        torch.save({'prox_func': self.prox_func.state_dict()}, model_save_path)
 
         self.debug_viz.plot(0, ["expert"], self._get_plot_funcs())
 

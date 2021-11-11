@@ -42,7 +42,7 @@ class GoalGridWorldInterface(EnvInterface):
         parser.add_argument('--gw-rand-pos', type=str2bool,
                 default=True)
         parser.add_argument('--gw-img', action='store_true',
-                default=False,
+                default=True,
                 help=(
                     "If true the observations will be an image. If false they",
                     " will be flattened."

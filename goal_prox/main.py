@@ -165,7 +165,7 @@ class GoalProxSettings(RunSettings):
         parser.add_argument("--alg")
         parser.add_argument("--env-name")
         # Should always be true!
-        parser.add_argument("--gw-img", action="store_true", default=True)
+        parser.add_argument("--gw-img", type=str2bool, default=True)
         parser.add_argument("--no-wb", action="store_true", default=False)
 
     def import_add(self):

@@ -88,7 +88,7 @@ class TransitionDataset(ImitationLearningDataset):
             "actions": self.trajs["actions"][i],
         }
 
-    def compute_split(self, traj_frac, rnd_seed):
+    def compute_split(self, traj_frac, rnd_seed=31):
         use_count = int(len(self) * traj_frac)
         all_idxs = np.arange(0, len(self))
 

@@ -106,7 +106,6 @@ class TrajDataset(ImitationLearningDataset):
 
         done = trajs["done"].float()
         actions = trajs["actions"].float()
-        episode_ids = trajs["episode_ids"]
 
         ret_trajs = []
 

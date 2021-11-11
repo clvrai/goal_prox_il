@@ -161,7 +161,8 @@ class GoalFetchInterface(GymFetchInterface):
         parser.add_argument('--fetch-obj-range', type=float, default=None)
         parser.add_argument('--fetch-goal-range', type=float, default=None)
         parser.add_argument('--fetch-ctrl-pen', type=float, default=0.0)
-        parser.add_argument('--fetch-easy-obs', action='store_true')
+        parser.add_argument('--fetch-easy-obs', action='store_true',
+                default=True)
         parser.add_argument('--fetch-cover', type=float, default=1.0)
         parser.add_argument('--noise-ratio', type=float, default=1.0)
         parser.add_argument('--goal-noise-ratio', type=float, default=1.0)
