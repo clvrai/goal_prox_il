@@ -1,13 +1,12 @@
 # Generalizable Imitation Learning from Observation via Inferring Goal Proximity
 
-[[Project website]](https://clvrai.com/gpil) [[Paper]](https://openreview.net/pdf?id=lp9foO8AFoD)
-
+[[Project website]](https://clvrai.com/gpil) [[Paper]](https://openreview.net/pdf?id=lp9foO8AFoD) <br/>
 [Youngwoon Lee*](https://youngwoon.github.io/)<sup>1</sup>,
 [Andrew Szot*](https://www.andrewszot.com)<sup>2</sup>,
 [Shao-Hua Sun](https://shaohua0116.github.io)<sup>1</sup>,
-[Joseph Lim](https://www.clvrai.com/)<sup>1</sup> at <sup>1</sup>USC CLVR lab and <sup>2</sup>Georgia Tech
+[Joseph Lim](https://www.clvrai.com/)<sup>1</sup> at <sup>1</sup>[USC CLVR lab](https://clvrai.com) and <sup>2</sup>Georgia Tech
 
-This is the official PyTorch implementation of the paper "**Generalizable Imitation Learning from Observation via Inferring Goal Proximity**" (NeurIPS 2021).
+This is the official PyTorch implementation of the paper ["Generalizable Imitation Learning from Observation via Inferring Goal Proximity"](https://clvrai.com/gpil) (NeurIPS 2021).
 
 <p align="center">
     <img src="docs/img/method.jpg" width="800">
