@@ -128,7 +128,7 @@ Our experiments show that the policy learned with the goal proximity function ge
 
 To analyze how well our method and the baselines can generalize to unseen states, we vary the difference between the states encountered in expert demonstrations and agent training. If our method allows for greater generalization from the expert demonstrations, our method should perform well even under states different than those in the expert demonstrations.
 
-The results of our method and baselines across varying degrees of generalization are shown below. Across both harder and easier generalization, our method demonstrates more consistent performance compared to baseline methods. While GAIfO-s performs well on high coverage or low noise, which require little generalization in agent learning, its performance deteriorates as the expert demonstration coverage decreases.
+The results of our method and baselines across varying degrees of generalization are shown below. Across both harder and easier generalization tasks, our method demonstrates more consistent performance compared to baseline methods. While the baseline GAIfO-s performs well on high coverage or low noise, which require little generalization in agent learning, its performance deteriorates as the expert demonstration coverage decreases.
 
 ![Comparisons to LfD and LfO baselines with different coverages](./img/quantitative_results_full.jpg "Comparisons to LfD and LfO baselines (whole)")
 
