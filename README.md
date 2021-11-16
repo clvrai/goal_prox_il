@@ -1,20 +1,18 @@
 # Generalizable Imitation Learning from Observation via Inferring Goal Proximity
-#### [[Paper]](https://openreview.net/pdf?id=lp9foO8AFoD)
-[Youngwoon Lee*](https://youngwoon.github.io/)<sup>1</sup>, 
-[Andrew Szot*](https://www.andrewszot.com)<sup>2</sup>, 
-[Shao-Hua Sun](https://shaohua0116.github.io)<sup>1</sup>, 
-[Joseph Lim](https://www.clvrai.com/)<sup>1</sup>
 
-<sup>1</sup>CLVR Lab, University of Southern California 
-<sup>2</sup>Georgia Institute of Technology
+[[Project website]](https://clvrai.com/gpil) [[Paper]](https://openreview.net/pdf?id=lp9foO8AFoD)
+
+[Youngwoon Lee*](https://youngwoon.github.io/)<sup>1</sup>,
+[Andrew Szot*](https://www.andrewszot.com)<sup>2</sup>,
+[Shao-Hua Sun](https://shaohua0116.github.io)<sup>1</sup>,
+[Joseph Lim](https://www.clvrai.com/)<sup>1</sup> at <sup>1</sup>USC CLVR lab and <sup>2</sup>Georgia Tech
+
+This is the official PyTorch implementation of the paper "**Generalizable Imitation Learning from Observation via Inferring Goal Proximity**" (NeurIPS 2021).
 
 <p align="center">
-<img src="method.png" width="800">
-</img>
+    <img src="docs/img/method.jpg" width="800">
 </p>
 
-This is the official PyTorch implementation of the paper "**Generalizable Imitation Learning from Observation via Inferring Goal Proximity**"
-(NeurIPS 2021).
 
 
 ## Installation
@@ -168,13 +166,13 @@ For running experiments with different noise levels, change the value of the arg
     demonstrations. `python goal_prox/envs/fetch/fetch_push_dems.py --easy-obs`
   - `goal_prox/gym_minigrid`: MiniGrid code for navigation environment from
     [maximecb](https://github.com/maximecb/gym-minigrid).
-- `rlf`: base RL code and code for imitation learning baselines from [rl-toolkit](https://github.com/ASzot/rl-toolkit).
-  - `rlf/algos/on_policy/ppo.py`: the PPO policy updater code we use for RL.
-  - `rlf/algos/il/bco.py`: the Behavioral Cloning from Observation baseline
+- `rl-toolkit`: base RL code and code for imitation learning baselines from [rl-toolkit](https://github.com/ASzot/rl-toolkit).
+  - `rl-toolkit/algos/on_policy/ppo.py`: the PPO policy updater code we use for RL.
+  - `rl-toolkit/algos/il/bco.py`: the Behavioral Cloning from Observation baseline
     code.
-  - `rlf/algos/il/gaifo.py`: the Generative Adversarial Imitation Learning from
+  - `rl-toolkit/algos/il/gaifo.py`: the Generative Adversarial Imitation Learning from
     Observations baseline code. Extends the code from regular GAIL from the same
-    directory (`rlf/algos/il/gail.py`).
+    directory (`rl-toolkit/algos/il/gail.py`).
 - `d4rl`: Codebase from [D4RL: Datasets for Deep Data-Driven Reinforcement Learning](https://github.com/rail-berkeley/d4rl) for Maze2D.
 - `pytorch_sac`: SQIL implementation based on SAC implementation [denisyarats](https://github.com/denisyarats/pytorch_sac).
 
@@ -185,3 +183,14 @@ For running experiments with different noise levels, change the value of the arg
 - The Ant environment is with some tweaking from [DnC](https://github.com/dibyaghosh/dnc)
 - The SAC code is from [denisyarats](https://github.com/denisyarats/pytorch_sac)
 - The Maze2D environment is based on [D4RL: Datasets for Deep Data-Driven Reinforcement Learning](https://github.com/rail-berkeley/d4rl).
+
+
+## Citation
+```
+@inproceedings{lee2021gpil,
+  title={Generalizable Imitation Learning from Observation via Inferring Goal Proximity},
+  author={Youngwoon Lee and Andrew Szot and Shao-Hua Sun and Joseph J. Lim},
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2021}
+}
+```
